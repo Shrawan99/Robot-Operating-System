@@ -1,0 +1,15 @@
+<launch>
+	<node pkg="rosserial_python" type= "serial_node.py" name="serial_node">
+	<param name="port" type="string" value="/dev/ttyUSB0"/> 
+	</node>
+	<node pkg="joy" type="joy_node" name="joy_node" >
+	<param name="dev" type="string" value="/dev/input/js0"/>
+	</node>
+	<node pkg="arduino_joy_teleop" type= "ArduinoTeleop.py" name="joy_teleop_node"/>
+	<node pkg="proc_odom" type="proc_odom_node.py" name="proc_odom"/>
+	<node pkg="arduino_joy_teleop" type="ArduinoTeleopPTU2.py" name="ptu_joy_control"/>
+	<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node"/>
+	<node pkg="proc_imu" type="imuMsg2sensorImu.py" name="imuMsg2sensorImu"/>
+	<node pkg="proc_ptu" type="generatePTUStamped.py" name="generatePTUStamped"/>
+	<node pkg="setup_tf_tree" type="setup_tf_tree_node" name="setup_tf_tree"/>
+</launch>

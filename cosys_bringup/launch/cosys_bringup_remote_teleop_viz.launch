@@ -1,0 +1,9 @@
+<launch>
+	<node pkg="joy" type="joy_node" name="joy_node" >
+	<param name="dev" type="string" value="/dev/input/js1"/>
+	</node>
+	<node pkg="arduino_joy_teleop" type= "ArduinoRemoteTeleop.py" name="joy_teleop_node"/>
+	<node pkg="arduino_joy_teleop" type="ArduinoRemoteTeleopPTU2.py" name="ptu_joy_control"/>
+        <include file="$(find cosys_rviz_launchers)/launch/cosys_navigation_visualization.launch" />
+
+</launch>

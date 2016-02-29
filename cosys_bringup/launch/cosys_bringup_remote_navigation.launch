@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find cosys_bringup)/launch/cosys_bringup_minimal_remote.launch"/>
+  <include file="$(find cosys_bringup)/launch/cosys_freenect_pcl_to_laserscan.launch" />
+  <include file="$(find cosys_bringup)/launch/cosys_freenect_image_transport.launch" />
+<include file="$(find cosys_navigation)/launch/cosys_navigation.launch"/>
+
+</launch>

@@ -1,0 +1,11 @@
+Install rospackage imutools from 
+http://wiki.ros.org/imu_tools
+
+
+We need this tool to compute orientation from
+from raw imu_data rostopic published from Seeduino.
+
+imuMsg2sensorImy.py script in proc_imu package converts
+proc_imu/imuMsg (rostopic imu_data) ros message types to sensor_msgs/Imu (rostopic imu/data_raw)
+
+This script also publishes another rostopic imu/mag as ros message type geometry_msgs/Vector3Stamped

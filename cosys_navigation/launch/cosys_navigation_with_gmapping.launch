@@ -1,0 +1,17 @@
+<launch>
+  <!-- Map server -->
+  <!--<arg name="map_file" default="$(find cosys_navigation)/maps/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+    <param name="frame_id" value="/odom" />
+  </node>-->
+  <!-- Localization-->
+  
+  <include file="$(find cosys_navigation)/launch/includes/amcl.launch.xml"/>
+
+  <!-- Move base -->
+  <include file="$(find cosys_navigation)/launch/includes/move_base.launch.xml"/>
+  <param name="local_costmap/global_frame" value="/odom"/>
+  
+
+<!--<include file="$(find cosys_navigation)/launch/cosys_navigation_rviz.launch"/> -->
+ </launch>

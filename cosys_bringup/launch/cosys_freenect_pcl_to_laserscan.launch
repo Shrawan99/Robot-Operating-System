@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find freenect_launch)/launch/freenect.launch">
+  <arg name="depth_registration" value="true"/>
+  </include>
+  <node name="kinect_to_laserscan" pkg="kinect_to_laserscan" type="kinect_to_laserscan_node"  >
+  <remap from="in_cloud" to="/camera/depth_registered/points" /> 
+  <remap from="kinect_laserscan" to="scan"/>
+  </node>
+    <!-- Following package can be used to remove veiling effect -->
+    <!--<include file="$(find cosys_bringup)/launch/cosys_laser_scan_filter.launch"/> -->
+
+</launch>

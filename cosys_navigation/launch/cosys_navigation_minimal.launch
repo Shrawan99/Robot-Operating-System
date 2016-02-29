@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- Localization -->
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(find cosys_navigation)/launch/includes/amcl.launch.xml">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!-- Move base -->
+  <include file="$(find cosys_navigation)/launch/includes/move_base.launch.xml"/>
+  <param name="local_costmap/global_frame" value="/odom_combined"/>
+  
+  
+  <!--
+  Used for visualising the turtlebot while building a map or navigating with the ros navistack.
+ -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cosys_navigation)/rviz/navigation.rviz"/>
+</launch>

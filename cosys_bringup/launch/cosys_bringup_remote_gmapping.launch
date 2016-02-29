@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find cosys_bringup)/launch/cosys_bringup_minimal_remote.launch"/>
+  <include file="$(find cosys_bringup)/launch/cosys_freenect_pcl_to_laserscan.launch" />
+  <node pkg = "gmapping" type = "slam_gmapping" name = "gmapping"/>
+
+</launch>

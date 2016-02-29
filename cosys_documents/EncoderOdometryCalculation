@@ -1,0 +1,17 @@
+Odometry Calculation
+
+WheelDiameter (wd) = .52 m
+Wheel/Encoder (wencr)= 7.6
+
+Encoder 
+   full rotation clicks (rotClick) = 1024 
+   wheel full rotation clicks (wheelClick) = 
+	rotClick * wencr * (pi * wd)
+1024 * 7.6 * pi * 
+   
+
+1024 * 7.6 clicks 	= 360 degree
+1 click	(perClick)	= 360 / (1024 * 7.6)
+			= 0.046258224 degreesc
+
+v = 

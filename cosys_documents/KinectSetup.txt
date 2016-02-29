@@ -1,0 +1,6 @@
+To run Microsoft Kinect Sensor install freenect_stack using the command below
+
+$ sudo apt-get install ros-hydro-freenect-stack 
+
+Details available here
+http://wiki.ros.org/freenect_stack
